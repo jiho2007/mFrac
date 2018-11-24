@@ -1,31 +1,33 @@
 Metadata-Version: 2.1
 Name: mfrac
-Version: 0.0.1
+Version: 0.1
 Summary: A Small Fraction Class Package
-Home-page: https://github.com/jiho2007/fraction
+Home-page: https://github.com/jiho2007/mFrac
 Author: jiho2007
 Author-email: zzang-9@naver.com
 License: UNKNOWN
-Description: # fraction
-        Makes &lt;class 'frac'> in Python3
+Description: # mFrac
+        **A Simple Fraction Python Library**
         
-        ex:
-        
-        n = frac(1, 2)
-        
-        m = frac(m=3, n=2)
-        
-        print(n*m)
-        
-        
-        This code prints '1/3'.
-        
-        n is 1/2, and m is 2/3.
-        
-        
+        **Feature:**  
+        This Library implements 'frac' class.  
         You can add, subtract, multiplicate, divide Fractions.
         
-        how to install: python3 -m pip install --index-url https://test.pypi.org/simple/ fraction
+        **how to install**: *pip install -i https://test.pypi.org/simple/ mfrac*
+        
+        
+        **Example Code:**
+        
+        ```python
+        from mfrac import frac
+        n = frac(1, 2)           #create 1/2
+        m = frac(m=3, n=2)       #you can set numerator to n, denominator to m
+        x = frac(2, 8).reduc()   #reduction of 2/8 (=1/4)
+        print(n+m)               #print "5/6"
+        print(1-m)               #print "1/3"
+        print(m*2)               #print "4/3"
+        print(n/2)               #print "1/4"
+        ```
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License

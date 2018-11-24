@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="mfrac",
-    version="0.0.1",
+    version="0.1",
     author="jiho2007",
     author_email="zzang-9@naver.com",
     description="A Small Fraction Class Package",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/jiho2007/fraction",
+    url="https://github.com/jiho2007/mFrac",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

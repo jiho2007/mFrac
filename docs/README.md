@@ -1,11 +1,12 @@
 # mFrac
-**A Simple Fraction Python Library**  
+**A Simple Fraction Python Library**
 
 **Feature:**  
 This Library implements 'frac' class.  
 You can add, subtract, multiplicate, divide Fractions.
 
-**How to install:** *pip install -i https://test.pypi.org/simple/ mfrac*
+**How to Install:** *pip install -i https://test.pypi.org/simple/ mfrac*
+**How to Upgrade:** *pip install -i https://test.pypi.org/simple/ mfrac --upgrade*
 
 **[Download ZIP](https://github.com/jiho2007/mfrac/archive/master.zip)**  
 **[Download TAR.GZ](https://github.com/jiho2007/mfrac/archive/master.tar.gz)**  
