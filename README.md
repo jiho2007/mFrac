@@ -5,7 +5,7 @@
 This Library implements 'frac' class.  
 You can add, subtract, multiplicate, divide Fractions.
 
-**How to install**: *pip install -i https://test.pypi.org/simple/ mfrac*
+**How to install**: *pip install -i https://test.pypi.org/simple/ mfrac*  
 **How to upgrade**: *pip install -i https://test.pypi.org/simple/ mfrac --upgrade*
 
 
