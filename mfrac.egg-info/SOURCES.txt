@@ -1,0 +1,7 @@
+README.md
+setup.py
+mfrac/__init__.py
+mfrac.egg-info/PKG-INFO
+mfrac.egg-info/SOURCES.txt
+mfrac.egg-info/dependency_links.txt
+mfrac.egg-info/top_level.txt
