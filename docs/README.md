@@ -16,7 +16,7 @@ You can add, subtract, multiplicate, divide Fractions.
 **Import Code:**  
 import code is simple. Just use this:  
 ```python
-from mfrac import frac
+from mfrac.frac import frac
 ```
 
 **Creating Fraction Object**  
