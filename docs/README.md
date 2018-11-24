@@ -1,5 +1,5 @@
 # mFrac
-##A Simple Fraction Python Library  
+**A Simple Fraction Python Library**  
 
 **Feature:**  
 This Library implements 'frac' class.  
