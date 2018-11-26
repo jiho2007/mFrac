@@ -2,7 +2,9 @@
 #Script By jiho2007
 
 class frac:
-    def __init__(self, n=1, m=1):
+    def __init__(self, n, m=1):
+        if type(n) == str or type(m) == str:
+            raise TypeError
         self.n = n #분자
         self.m = m #분모
         if type(n) != int and n % 1 == 0: #int화
@@ -33,7 +35,7 @@ class frac:
             else:
                 return 0
             return frac(rn, self.m*f.m).reduc()
-        return self.__sub__(frac())
+        return self.__sub__(frac(1))
 
     def __mul__(self, f): #곱셈
         if type(f) == frac:
@@ -66,7 +68,7 @@ class frac:
             a = self.common(f)
             b = f.common(self)
             return a.n == b.n and a.m == b.m
-        return self.__eq__(frac())
+        return self.__eq__(frac(1))
 
     def __ne__(self, f): #같지 않은지 비교
         return not self.__eq__(f)
@@ -76,28 +78,28 @@ class frac:
             a = self.common(f)
             b = f.common(self)
             return a.n < b.n and a.m == b.m
-        return self.__lt__(frac())
+        return self.__lt__(frac(1))
 
     def __le__(self, f): #작거나 같은지 비교
         if type(f) == frac:
             a = self.common(f)
             b = f.common(self)
             return a.n <= b.n and a.m == b.m
-        return self.__le__(frac())
+        return self.__le__(frac(1))
 
     def __gt__(self, f): #큰지 비교
         if type(f) == frac:
             a = self.common(f)
             b = f.common(self)
             return a.n > b.n and a.m == b.m
-        return self.__lt__(frac())
+        return self.__lt__(frac(1))
 
     def __ge__(self, f): #크거나 같은지 비교
         if type(f) == frac:
             a = self.common(f)
             b = f.common(self)
             return a.n >= b.n and a.m == b.m
-        return self.__le__(frac())
+        return self.__le__(frac(1))
 
     def toFloat(self): #소수로 반환
         return float(self.n) / float(self.m)
@@ -108,7 +110,7 @@ class frac:
         elif self.n<self.m:
             c=self.n
         else:
-            return frac()
+            return frac(1)
         for i in range(c, 0, -1):
             if self.n%i == 0 and self.m%i == 0:
                 return frac(self.n/i, self.m/i)
@@ -118,3 +120,18 @@ class frac:
         if type(f) == frac:
             return frac(self.n*f.m, self.m*f.m)
         return frac(self.n*f, self.m*f)
+    
+    def clean(self): #int화
+        x = 1
+        while True:
+            if (self.n * x) % 1 == 0:
+                return frac(self.n * x, self.m * x).reduc()
+            x += 1
+
+    def be(self, f):
+        if type(f) == frac:
+            self.n = f.n
+            self.m = f.m
+        else:
+            self.n = f
+            self.m = 1

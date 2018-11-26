@@ -17,6 +17,17 @@ class Test(unittest.TestCase):
     def test_common(self):
         self.assertEqual(self.half.common(self.div3).n, 3)
 
+    def test_tofloat(self):
+        self.assertEqual(self.half.toFloat(), 0.5)
+
+    def test_clean(self):
+        self.assertEqual(self.opf.clean().reduc(), frac(1, 2))
+
+    def test_be(self):
+        x = frac(4, 7)
+        x.be(frac(8, 9))
+        self.assertEqual(x, frac(8, 9))
+
     def test_add(self):
         self.assertEqual(self.half + self.div3, frac(5, 6))
 
@@ -28,9 +39,6 @@ class Test(unittest.TestCase):
 
     def test_div(self):
         self.assertEqual(1 / self.div3, frac(3, 1))
-
-    def test_tofloat(self):
-        self.assertEqual(self.half.toFloat(), 0.5)
 
     def test_eq(self):
         self.assertEqual(self.half == self.fds, True)
@@ -49,6 +57,14 @@ class Test(unittest.TestCase):
 
     def test_ge(self):
         self.assertEqual(self.half >= self.div3, True)
+
+    def test_strerror(self):
+        try:
+            b = False
+            x = frac('hello', 'world')
+        except TypeError:
+            b = True
+        self.assertEqual(b, True)
 
 if __name__ == '__main__':
     unittest.main()
