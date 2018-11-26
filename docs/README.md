@@ -16,7 +16,7 @@ You can add, subtract, multiplicate, divide Fractions.
 **Import Code:**  
 import code is simple. Just use this:  
 ```python
-from mfrac.frac import frac
+from mfrac import frac
 ```
 
 **Creating Fraction Object**  
@@ -25,11 +25,17 @@ from mfrac.frac import frac
 >>> m = frac(m=3, n=2) #you can set numerator to n, denominator to m
 ```
 
-**Reduction**  
+**Clean**  
 ```python
 >>> x = frac(2, 8)   #create fraction 2/8
 >>> print(x.reduc()) #reduction of 2/8
 '1/4'
+>>> f = frac(1.5 , 3)#create fraction 1.5/3
+>>> print(f.clean()) #clean 1.5/3 to 1/2
+'1/2'
+>>> f.be(frac(8, 9)) #make fraction 'f' to 8/9
+>>> print(f)
+'8/9'
 ```
 
 **Calculation**  
@@ -48,14 +54,14 @@ from mfrac.frac import frac
 
 **Comparing**
 ```python
->>> frac(1, 2) == frac(2, 4)
+>>> frac(1, 2) == frac(2, 4) #Equals
 True
->>> frac(1, 2) < frac(1, 3)
+>>> frac(1, 2) < frac(1, 3)  #Less than
 False
->>> frac(1, 2) <= frac(3, 6)
+>>> frac(1, 2) <= frac(3, 6) #Less than and Equals
 True
->>> frac(2, 4) > frac(3, 9)
+>>> frac(2, 4) > frac(3, 9)  #Greater than
 True
->>> frac(3, 6) >= frac(6, 9)
+>>> frac(3, 6) >= frac(6, 9) #Greater than and Equals
 False
 ```
