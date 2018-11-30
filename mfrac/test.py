@@ -2,7 +2,9 @@
 #Script By jiho2007
 
 import unittest
+
 from frac import frac
+from error import FractionError
 
 class Test(unittest.TestCase):
     def setUp(self):
@@ -19,14 +21,6 @@ class Test(unittest.TestCase):
 
     def test_tofloat(self):
         self.assertEqual(self.half.toFloat(), 0.5)
-
-    def test_clean(self):
-        self.assertEqual(self.opf.clean().reduc(), frac(1, 2))
-
-    def test_be(self):
-        x = frac(4, 7)
-        x.be(frac(8, 9))
-        self.assertEqual(x, frac(8, 9))
 
     def test_add(self):
         self.assertEqual(self.half + self.div3, frac(5, 6))
@@ -58,13 +52,22 @@ class Test(unittest.TestCase):
     def test_ge(self):
         self.assertEqual(self.half >= self.div3, True)
 
-    def test_strerror(self):
+    def test_reversed(self):
+        self.assertEqual(reversed(self.half), frac(2, 1))
+
+    def test_reversed_float(self):
+        self.assertEqual(reversed(self.half).toFloat(), 2)
+
+    def test_error_init(self):
         try:
             b = False
             x = frac('hello', 'world')
-        except TypeError:
+        except FractionError:
             b = True
         self.assertEqual(b, True)
+
+    def test_bug_add(self):
+        self.assertEqual(self.half + frac(1, 2), frac(1, 1))
 
 if __name__ == '__main__':
     unittest.main()

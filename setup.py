@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="mfrac",
-    version="0.1.1",
+    version="0.2",
     author="jiho2007",
     author_email="zzang-9@naver.com",
     description="A Small Fraction Class Package",

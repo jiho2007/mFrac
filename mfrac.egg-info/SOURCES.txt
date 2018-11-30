@@ -1,6 +1,7 @@
 README.md
 setup.py
 mfrac/__init__.py
+mfrac/error.py
 mfrac/frac.py
 mfrac/test.py
 mfrac.egg-info/PKG-INFO

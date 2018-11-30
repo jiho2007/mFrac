@@ -1,10 +1,12 @@
 #frac.py
 #Script By jiho2007
 
+from error import FractionError
+
 class frac:
     def __init__(self, n, m=1):
         if type(n) == str or type(m) == str:
-            raise TypeError
+            raise FractionError('Invalid Argument Type')
         self.n = n #분자
         self.m = m #분모
         if type(n) != int and n % 1 == 0: #int화
@@ -21,10 +23,13 @@ class frac:
     def __format__(self, s):
         return self.__str__()
 
+    def __reversed__(self):
+        return frac(self.m, self.n)
+
     def __add__(self, f): #덧셈
         if type(f) == frac:
-            return frac(self.n*f.m + self.m*f.n, self.m * f.m)
-        return frac(self.n + f*self.m, self.m)
+            return frac(self.n*f.m + self.m*f.n, self.m * f.m).reduc()
+        return frac(self.n + f*self.m, self.m).reduc()
 
     def __sub__(self, f): #뺄셈
         if type(f) == frac:
@@ -120,18 +125,3 @@ class frac:
         if type(f) == frac:
             return frac(self.n*f.m, self.m*f.m)
         return frac(self.n*f, self.m*f)
-    
-    def clean(self): #int화
-        x = 1
-        while True:
-            if (self.n * x) % 1 == 0:
-                return frac(self.n * x, self.m * x).reduc()
-            x += 1
-
-    def be(self, f):
-        if type(f) == frac:
-            self.n = f.n
-            self.m = f.m
-        else:
-            self.n = f
-            self.m = 1
