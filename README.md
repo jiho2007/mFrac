@@ -5,7 +5,7 @@
 This Library implements 'frac' class.  
 You can add, subtract, multiplicate, divide Fractions.
 
-The Lastest Version Of mFrac is 0.2
+The Lastest Version Of mFrac is 0.2.1
 
 **How to install:** *pip install -i https://test.pypi.org/simple/ mfrac*  
 **How to upgrade:** *pip install -i https://test.pypi.org/simple/ mfrac --upgrade*
