@@ -1,7 +1,7 @@
 #frac.py
 #Script By jiho2007
 
-from error import FractionError
+from .error import FractionError
 
 class frac:
     def __init__(self, n, m=1):
