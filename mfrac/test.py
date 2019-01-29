@@ -1,10 +1,14 @@
 #test.py
 #Script By jiho2007
 
+"""
+NOTE: ONLY FOR TESTING PACKAGE FOR DEVELOPERS.
+DONT IMPORT IT.
+"""
+
 import unittest
 
 from frac import frac
-from error import FractionError
 
 class Test(unittest.TestCase):
     def setUp(self):
@@ -12,6 +16,8 @@ class Test(unittest.TestCase):
         self.div3 = frac(1, 3)
         self.fds  = frac(4, 8)
         self.opf  = frac(1.5, 3)
+        
+        self.x = frac(3,2)
     
     def test_reduc(self):
         self.assertEqual(self.fds.reduc(), self.half)
@@ -20,13 +26,16 @@ class Test(unittest.TestCase):
         self.assertEqual(self.half.common(self.div3).n, 3)
 
     def test_tofloat(self):
-        self.assertEqual(self.half.toFloat(), 0.5)
+        self.assertEqual(float(self.half), 0.5)
 
     def test_add(self):
         self.assertEqual(self.half + self.div3, frac(5, 6))
 
     def test_sub(self):
         self.assertEqual(1 - self.div3, frac(2, 3))
+	
+    def test_sub2(self):
+        self.assertEqual(frac(11,2) - 5, frac(1,2))
 
     def test_mul(self):
         self.assertEqual(self.half * self.div3, frac(1, 6))
@@ -52,17 +61,20 @@ class Test(unittest.TestCase):
     def test_ge(self):
         self.assertEqual(self.half >= self.div3, True)
 
+    def test_mod(self):
+        self.assertEqual(self.x%(4,3), frac(4,3))
+	
     def test_reversed(self):
         self.assertEqual(reversed(self.half), frac(2, 1))
 
     def test_reversed_float(self):
-        self.assertEqual(reversed(self.half).toFloat(), 2)
+        self.assertEqual(float(reversed(self.half)), 2)
 
     def test_error_init(self):
         try:
             b = False
             x = frac('hello', 'world')
-        except FractionError:
+        except:
             b = True
         self.assertEqual(b, True)
 

@@ -65,3 +65,11 @@ True
 >>> frac(3, 6) >= frac(6, 9) #Greater than and Equals
 False
 ```
+
+**Set Numerator and Denominator**
+```python
+>>> x = frac(1,2)
+>>> x % (3,4)
+>>> print(x)
+3/4
+```
