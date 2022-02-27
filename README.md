@@ -11,5 +11,5 @@ The Lastest Version Of mFrac is 0.3.1
 **How to upgrade:** *pip install -i https://test.pypi.org/simple/ mfrac --upgrade*
 
 
-**Wiki:** [View On Github Pages](https://jiho2007.github.io/mFrac/)
+**Wiki:** [View On Github Pages](https://piz2a.github.io/mFrac/)
 
